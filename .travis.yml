@@ -8,8 +8,8 @@ sudo: true
 
 addons:
  apt:
-  sources: deadsnakes
-  packages: python3.5-dev
+  sources: [deadsnakes]
+  packages: [python3.5-dev]
 
 before_install:
 - sudo apt-get -qq update
