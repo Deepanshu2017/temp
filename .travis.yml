@@ -24,7 +24,7 @@ before_install:
 
 
 script:
-- cmake -DHYDRA_INSTALL_PATH=../Hydra -DPYBIND11_INSTALL_PATH=../pybind11/include -DTHRUST_INSTALL_PATH=../Hydra ../Hydra.Python
+- cmake -DHYDRA_INSTALL_PATH=../Hydra -DPYBIND11_INSTALL_PATH=../pybind11/include -DTHRUST_INSTALL_PATH=../Hydra Hydra.Python
 - mv HydraPython.so Hydra.Python/tests/
 - ls tests/
 - python hello.py
