@@ -11,5 +11,22 @@ before_install:
 - pip install numpy
 - pip install llvmlite
 - pip install numba
+- wget https://downloads.sourceforge.net/project/tclap/tclap-1.2.1.tar.gz
+- wget https://root.cern.ch/download/root_v6.08.06.Linux-ubuntu16-x86_64-gcc5.4.tar.gz
+- wget https://dl.bintray.com/boostorg/release/1.64.0/source/boost_1_64_0.tar.gz
+- tar -xvf tclap-1.2.1.tar.gz
+- cd tclap-1.2.1
+- ./configure
+- make
+- make install
+- cd ..
+- tar -xvf root_v6.08.06.Linux-ubuntu16-x86_64-gcc5.4.tar.gz
+- . root/bin/thisroot.sh
+- tar -xvf boost_1_64_0.tar.gz
+- cd boost_1_64_0
+- ./bootstrap.sh
+- ./b2 -j16 install
+- cd ..
+
 
 script: python hello.py
