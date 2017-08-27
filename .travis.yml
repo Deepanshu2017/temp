@@ -13,6 +13,8 @@ addons:
 
 before_install:
 - sudo apt-get remove python3.4 python3.4-dev
+- sudo apt-get purge python3.4 python3.4-dev
+- sudo apt-get autoremove
 - sudo apt-get install -y cmake git g++ wget
 - wget https://downloads.sourceforge.net/project/tclap/tclap-1.2.1.tar.gz
 - wget https://root.cern.ch/download/root_v6.08.06.Linux-ubuntu16-x86_64-gcc5.4.tar.gz
