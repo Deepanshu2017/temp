@@ -13,6 +13,7 @@ addons:
 
 before_install:
 - sudo apt-get -qq update
+- sudo apt-get -y purge python3.4
 - sudo apt-get install -y cmake git g++ wget python3-pip
 - wget https://downloads.sourceforge.net/project/tclap/tclap-1.2.1.tar.gz
 - wget https://root.cern.ch/download/root_v6.08.06.Linux-ubuntu16-x86_64-gcc5.4.tar.gz
@@ -30,9 +31,8 @@ before_install:
 
 
 script:
-- cmake -DHYDRA_INSTALL_PATH=../Hydra -DPYBIND11_INSTALL_PATH=../pybind11/include -DTHRUST_INSTALL_PATH=../Hydra -DPYTHON_EXECUTABLE=/usr/bin/python3.5 temp
+- cmake -DHYDRA_INSTALL_PATH=../Hydra -DPYBIND11_INSTALL_PATH=../pybind11/include -DTHRUST_INSTALL_PATH=../Hydra temp
 - make all
 - ls
 - ls temp/
-- mv HydraPython.so temp/tests/
-- python test_events.py
+- python -m unittest discover -s temp/tests -p 'test_*.py'
