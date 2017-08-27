@@ -17,6 +17,7 @@ before_install:
 - sudo apt-get autoremove
 - sudo apt-get install -y cmake git g++ wget
 - sudo apt-get install python3.5 python3.5-dev
+- sudo apt-get install python3.5-pip python3.5-tk python3.5-lxml python3.5-six
 - wget https://downloads.sourceforge.net/project/tclap/tclap-1.2.1.tar.gz
 - wget https://root.cern.ch/download/root_v6.08.06.Linux-ubuntu16-x86_64-gcc5.4.tar.gz
 - tar -xf tclap-1.2.1.tar.gz
