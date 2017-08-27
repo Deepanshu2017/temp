@@ -18,12 +18,13 @@ before_install:
 - cd ..
 - tar -xf root_v6.08.06.Linux-ubuntu16-x86_64-gcc5.4.tar.gz
 - . root/bin/thisroot.sh
+- cd ..
 - git clone https://github.com/AAAlvesJr/Hydra.git
 - git clone https://github.com/pybind/pybind11.git
 
 
 script:
 - cmake -DHYDRA_INSTALL_PATH=../Hydra -DPYBIND11_INSTALL_PATH=../pybind11/include -DTHRUST_INSTALL_PATH=../Hydra ../Hydra.Python
-- mv HydraPython.so tests/
+- mv HydraPython.so Hydra.Python/tests/
 - ls tests/
 - python hello.py
