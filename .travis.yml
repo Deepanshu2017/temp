@@ -12,7 +12,6 @@ addons:
   packages: [python3.5-dev]
 
 before_install:
-- make -n altinstall | grep -v rm | grep -Po '/usr/local[^[:space:]]*?python3.4' | sort -u
 - sudo apt-get install -y cmake git g++ wget python3-pip
 - wget https://downloads.sourceforge.net/project/tclap/tclap-1.2.1.tar.gz
 - wget https://root.cern.ch/download/root_v6.08.06.Linux-ubuntu16-x86_64-gcc5.4.tar.gz
@@ -30,7 +29,7 @@ before_install:
 
 
 script:
-- cmake -DHYDRA_INSTALL_PATH=../Hydra -DPYBIND11_INSTALL_PATH=../pybind11/include -DTHRUST_INSTALL_PATH=../Hydra temp
+- cmake -DHYDRA_INSTALL_PATH=../Hydra -DPYBIND11_INSTALL_PATH=../pybind11/include -DTHRUST_INSTALL_PATH=../Hydra -DPYTHON_EXECUTABLE=/usr/bin/python3.5 temp
 - make all
 - ls
 - ls temp/
