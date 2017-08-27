@@ -1,6 +1,8 @@
 Hydra.Python
 ============
 
+[![Build Status](https://travis-ci.org/Deepanshu2017/temp.svg?branch=master)](https://travis-ci.org/Deepanshu2017/temp)
+
 Python 2.7+ and 3.x bindings for the [Hydra C++ library](https://github.com/MultithreadCorner/Hydra/).
 
 The bindings are produced with [pybind11](http://pybind11.readthedocs.io/). The project makes use of [CMAKE](https://cmake.org/).
