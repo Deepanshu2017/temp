@@ -8,9 +8,6 @@ sudo: true
 
 before_install:
 - sudo apt-get install -y cmake git python3 python3-dev g++ wget python3-pip
-- pip install numpy
-- pip install llvmlite
-- pip install numba
 - wget https://downloads.sourceforge.net/project/tclap/tclap-1.2.1.tar.gz
 - wget https://root.cern.ch/download/root_v6.08.06.Linux-ubuntu16-x86_64-gcc5.4.tar.gz
 - tar -xf tclap-1.2.1.tar.gz
@@ -21,6 +18,10 @@ before_install:
 - cd ..
 - tar -xf root_v6.08.06.Linux-ubuntu16-x86_64-gcc5.4.tar.gz
 - . root/bin/thisroot.sh
+- git clone https://gitlab.com/aalvesjr/Hydra.Python.git
+- git clone https://github.com/pybind/pybind11.git
 
 
-script: python hello.py
+script:
+cmake -DHYDRA_INSTALL_PATH=../Hydra -DPYBIND11_INSTALL_PATH=../pybind11/include -DTHRUST_INSTALL_PATH=../Hydra ../Hydra.Python
+python hello.py
