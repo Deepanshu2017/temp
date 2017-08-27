@@ -30,7 +30,9 @@ before_install:
 
 
 script:
-- cmake -DHYDRA_INSTALL_PATH=../Hydra -DPYBIND11_INSTALL_PATH=../pybind11/include -DTHRUST_INSTALL_PATH=../Hydra temp
+- cmake -DHYDRA_INSTALL_PATH=../Hydra -DPYBIND11_INSTALL_PATH=../pybind11/include -DTHRUST_INSTALL_PATH=../Hydra -DPYTHON_EXECUTABLE=/usr/bin/python3.5 temp
 - make all
 - ls
 - ls temp/
+- mv HydraPython.so temp/tests/
+- python test_events.py
