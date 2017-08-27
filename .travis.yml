@@ -1,6 +1,8 @@
 language: python
+
 python:
 - "3.5"
+
 dist: trusty
 sudo: true
 
@@ -10,5 +12,4 @@ before_install:
 - pip install llvmlite
 - pip install numba
 
-script:
-python hello.py
+script: /usr/bin/python3.5 hello.py
