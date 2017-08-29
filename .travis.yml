@@ -3,13 +3,16 @@ language: python
 python:
 - "3.5"
 
+matrix:
+- os: linux
+  env: PYTHON=3.5 CPP=11 GCC=4.8
+  addons:
+	apt:
+		sources: [deadsnakes]
+		packages: [python3.5-dev python3.5-venv, cmake=2.\*, cmake-data=2.\*]
+
 dist: trusty
 sudo: true
-
-addons:
- apt:
-  sources: [deadsnakes]
-  packages: [python3.5-dev]
 
 before_install:
 - sudo apt-get install -y cmake git g++ wget
