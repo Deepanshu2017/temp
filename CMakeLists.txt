@@ -93,8 +93,8 @@ option(BUILD_DOCUMENTATION "Create and install the HTML based API documentation 
 find_package(pybind11 REQUIRED)
 include_directories(${pybind11_INCLUDE_DIRS})
 
-set(Python_ADDITIONAL_VERSIONS 3)
-find_package(PythonLibs 3 REQUIRED)
+set(Python_ADDITIONAL_VERSIONS 3.5)
+find_package(PythonLibs 3.5 REQUIRED)
 include_directories(${PYTHON_INCLUDE_DIRS})
 link_directories(${PYTHON_LIBRARIES})
 
