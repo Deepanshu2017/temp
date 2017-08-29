@@ -34,4 +34,6 @@ script:
 - make all
 - ls
 - ls temp/
+- ls /usr/include
+- ls /usr/lib/x86_64-linux-gnu/
 - python3 -m unittest discover -s temp/tests -p 'test_*.py'
